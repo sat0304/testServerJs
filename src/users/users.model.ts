@@ -1,5 +1,6 @@
-import { Column, DataType, HasOne, Model, Table } from "sequelize-typescript"
+import { Column, DataType, HasMany, HasOne, Model, Table } from "sequelize-typescript"
 import { Profile } from "src/profile/profile.model";
+import { Text } from "src/texts/texts.model";
 
 interface userCreationAttrs {
     email: string;
@@ -35,4 +36,7 @@ export class User extends Model<User, userCreationAttrs> {
         onDelete: 'CASCADE',
     })
     profile: Profile;
+
+    @HasMany(() => Text)
+    texts: Text[];
 }

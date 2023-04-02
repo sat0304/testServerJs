@@ -1,13 +1,12 @@
 import { Module } from '@nestjs/common';
-// import { AppController } from './app.controller';
-// import { AppService } from './app.service';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { User } from './users/users.model';
 import { UsersModule } from './users/users.module';
 import { ProfileModule } from './profile/profile.module';
 import { Profile } from './profile/profile.model';
 import { TextsModule } from './texts/texts.module';
-import { TextsModule } from './texts/texts.module';
+import { Text } from './texts/texts.model';
+import { FilesModule } from './files/files.module';
 
 @Module({
   imports: [SequelizeModule.forRoot({
@@ -17,12 +16,12 @@ import { TextsModule } from './texts/texts.module';
     username: 'postgres',
     password: 'Spges3spges',
     database: 'movie_db',
-    models: [User, Profile],
+    models: [User, Profile, Text],
     autoLoadModels: true,
   }), 
   UsersModule, 
   ProfileModule, 
-  TextsModule,
+  TextsModule, FilesModule,
 ],
   controllers: [],
   providers: [],
