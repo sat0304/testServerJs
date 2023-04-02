@@ -7,9 +7,15 @@ import { Profile } from './profile/profile.model';
 import { TextsModule } from './texts/texts.module';
 import { Text } from './texts/texts.model';
 import { FilesModule } from './files/files.module';
+import * as path from 'path';
+import { ServeStaticModule } from '@nestjs/serve-static';
 
 @Module({
-  imports: [SequelizeModule.forRoot({
+  imports: [
+    ServeStaticModule.forRoot({
+      rootPath: path.resolve(__dirname, 'static'),
+    }),
+    SequelizeModule.forRoot({
     dialect: 'postgres',
     host: 'localhost',
     port: 5432,
@@ -21,7 +27,8 @@ import { FilesModule } from './files/files.module';
   }), 
   UsersModule, 
   ProfileModule, 
-  TextsModule, FilesModule,
+  TextsModule, 
+  FilesModule,
 ],
   controllers: [],
   providers: [],
