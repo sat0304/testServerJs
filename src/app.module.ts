@@ -6,6 +6,8 @@ import { User } from './users/users.model';
 import { UsersModule } from './users/users.module';
 import { ProfileModule } from './profile/profile.module';
 import { Profile } from './profile/profile.model';
+import { TextsModule } from './texts/texts.module';
+import { TextsModule } from './texts/texts.module';
 
 @Module({
   imports: [SequelizeModule.forRoot({
@@ -19,7 +21,8 @@ import { Profile } from './profile/profile.model';
     autoLoadModels: true,
   }), 
   UsersModule, 
-  ProfileModule,
+  ProfileModule, 
+  TextsModule,
 ],
   controllers: [],
   providers: [],
