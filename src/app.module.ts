@@ -10,6 +10,7 @@ import { Text } from './texts/texts.model';
 import { FilesModule } from './files/files.module';
 import * as path from 'path';
 import { ServeStaticModule } from '@nestjs/serve-static';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -29,7 +30,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
   UsersModule, 
   ProfileModule, 
   TextsModule, 
-  FilesModule,
+  FilesModule, AuthModule,
 ],
   controllers: [],
   providers: [],

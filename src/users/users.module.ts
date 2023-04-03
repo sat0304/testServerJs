@@ -10,6 +10,8 @@ import { Profile } from 'src/profile/profile.model';
 @Module({
   controllers: [UsersController],
   providers: [UsersService], 
-  imports: [SequelizeModule.forFeature([User, Profile])]
+  imports: [SequelizeModule.forFeature([User, Profile])],
+  exports: [UsersService]
+
 })
 export class UsersModule {}

@@ -14,7 +14,7 @@ export class UsersService {
         const user = await this.userRepository.create(dto);
         return user;
     }
-
+// include функция подключает к вызову все связанные записи в других моделях.
     async getAllUsers() {
         const users = await this.userRepository.findAll({include: { all: true}});
         return users;
