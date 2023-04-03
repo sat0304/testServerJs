@@ -1,4 +1,4 @@
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable, UnauthorizedException } from '@nestjs/common';
 import { CreateUserDto } from 'src/users/dto/create_user_dto';
 import { UsersService } from 'src/users/users.service';
 
@@ -8,7 +8,8 @@ export class AuthService {
     constructor (private usersService: UsersService) {}
     
     async login(userDto: CreateUserDto) {
-        
+        const user = await this.validateUser(userDto);
+        return user;
     }
 
     
@@ -19,5 +20,13 @@ export class AuthService {
         }
         const user = await this.usersService.createUser({...userDto});
         return user;
+    }
+
+    private async validateUser(userDto: CreateUserDto) {
+        const user = await this.usersService.getUserByEmail(userDto.email);
+        if (user && (userDto.password == user.password)) {
+            return user; 
+        }
+        throw new UnauthorizedException('Password is wrong')
     }
 }
