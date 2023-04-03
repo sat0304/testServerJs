@@ -1,4 +1,6 @@
-import { All, Body, Controller, Get, Param, Post } from '@nestjs/common';
+// Контроллер обеспечивает управление маршрутизацией потоков данных
+// между БД и браузером
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create_user_dto';
 

@@ -1,3 +1,5 @@
+//Файл модуля группирует основные части: контроллер, логику и модели.
+//Формирует костяк конфигурации модуля, из чего он состоит.
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { UsersController } from './users.controller';

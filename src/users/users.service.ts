@@ -1,3 +1,5 @@
+//Файл сервиса содержит вспомогательные для маршрутизации
+//методы класса, результат которых используется в контроллере.
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { CreateUserDto } from './dto/create_user_dto';

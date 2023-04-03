@@ -1,3 +1,4 @@
+//Модуль верхнего уровня (основной модуль) объединяет все модули проекта
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { User } from './users/users.model';
