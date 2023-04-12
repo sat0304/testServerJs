@@ -1,8 +1,8 @@
 //Модель повторяет поля таблици в БД,
 //а также создает зависимости между таблицами в БД.
 import { Column, DataType, HasMany, HasOne, Model, Table } from "sequelize-typescript"
-import { Profile } from "src/profile/profile.model";
-import { Text } from "src/texts/texts.model";
+import { Profile } from "../profile/profile.model";
+import { Text } from "../texts/texts.model";
 
 // интерфейс задает поля DTO для создания класса
 interface userCreationAttrs {

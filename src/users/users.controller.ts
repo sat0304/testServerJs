@@ -6,6 +6,9 @@ import { CreateUserDto } from './dto/create_user_dto';
 
 @Controller('users')
 export class UsersController {
+    findAll(): any {
+        throw new Error('Method not implemented.');
+    }
 
     constructor (private usersService: UsersService) {}
 
